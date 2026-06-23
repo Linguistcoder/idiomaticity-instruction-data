@@ -22,12 +22,13 @@ Fluency refers to the linguistic quality of text that makes it natural, smooth, 
 
 When evaluating fluency, pay attention to:
 
-- **Grammar errors** — agreement errors (e.g. adjective–noun or determiner–noun disagreement), incorrect verb tense, incorrect word order, wrong word forms
+- **Grammar errors** — agreement errors (e.g. adjective–noun or determiner–noun disagreement), incorrect verb tense, incorrect word order, and more
+- **Punctuation problems** — missing or incorrect punctuation that affects readability; for Danish: consistent comma usage (either "med startkomma" or "uden startkomma")
+- **Spelling errors** — typos and misspellings, incorrect spacing or formation of compound words, wrong capitalisation, incorrect use of diacritics
+- **Word choice issues** — inappropriate vocabulary, incorrect word usage, repetitive language, wrong use of idioms or phrases, preposition errors
+- **Other language** — use of languages other than the target language; can be subwords (part of a compound), individual words, or whole phrases
 - **Awkward phrasing** — unnatural word order, stilted expressions, robotic language
-- **Punctuation problems** — missing or incorrect punctuation that affects readability
-- **Word choice issues** — inappropriate vocabulary, incorrect word usage, repetitive language, wrong use of idioms or phrases, incorrect spacing or formation of compound words, preposition errors
 - **Flow disruptions** — abrupt transitions, disconnected ideas within sentences
-- **Spelling errors** — typos and misspellings, wrong capitalisation, incorrect use of diacritics
 - **Translationese** — a common problem of language models is that they base their output on English — the majority language in the training corpus. This can result in unnatural language patterns that look like literal translations from English.
 
 ---
@@ -37,7 +38,7 @@ When evaluating fluency, pay attention to:
 1. Read the prompt and response without making immediate judgements.
 2. Identify fluency issues using the criteria above. Ignore content accuracy and relevance.
 3. For each issue: quote the problematic text, select a category, and rate severity on a scale from 1 to 5 (1 = subtle, 5 = very grave). Add a short explanation.
-4. In the final notes field: tag any idiomatic expressions or slang present in the text and state whether they are used correctly. Add any other observations that do not fit the issue categories.
+4. In the final notes field: tag any idiomatic expressions, slang, or cultural references present in the text and state whether each is used correctly. Add any other observations that do not fit the issue categories.
 
 ---
 
@@ -66,10 +67,10 @@ The tool walks you through each sample step by step:
 **STEP 1 — Fluency issues**
 Answer `y` if you found any fluency issues, then for each one:
 - Paste the problematic quote (or press Enter to skip)
-- Select a category: `g` grammar · `a` awkward phrasing · `p` punctuation · `w` word choice · `f` flow · `s` spelling · `t` translationese
+- Select a category: `g` grammar · `a` awkward phrasing · `p` punctuation · `w` word choice · `f` flow · `s` spelling · `t` translationese · `o` other language
 - Rate the severity 1–5
 - Write a short explanation
 
-**STEP 2 — Idioms / slang & additional notes**
-Note any idiomatic expressions or slang and whether they are used correctly. Add any other free-form observations.
+**STEP 2 — Idioms / slang / cultural references & additional notes**
+Note any idiomatic expressions, slang, or cultural references and whether each is used correctly. Add any other free-form observations.
 
