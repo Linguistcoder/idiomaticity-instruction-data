@@ -27,6 +27,7 @@ When evaluating fluency, pay attention to:
 - **Spelling errors** — typos and misspellings, incorrect spacing or formation of compound words, wrong capitalisation, incorrect use of diacritics
 - **Word choice issues** — inappropriate vocabulary, incorrect word usage, repetitive language, wrong use of idioms or phrases, preposition errors
 - **Other language** — use of languages other than the target language; can be subwords (part of a compound), individual words, or whole phrases
+- **Unclear** — something is noticeably wrong but you cannot identify the specific problem in the moment; use this rather than leaving the issue untagged
 - **Awkward phrasing** — unnatural word order, stilted expressions, robotic language
 - **Flow disruptions** — abrupt transitions, disconnected ideas within sentences
 - **Translationese** — a common problem of language models is that they base their output on English — the majority language in the training corpus. This can result in unnatural language patterns that look like literal translations from English.
@@ -67,7 +68,7 @@ The tool walks you through each sample step by step:
 **STEP 1 — Fluency issues**
 Answer `y` if you found any fluency issues, then for each one:
 - Paste the problematic quote (or press Enter to skip)
-- Select a category: `g` grammar · `a` awkward phrasing · `p` punctuation · `w` word choice · `f` flow · `s` spelling · `t` translationese · `o` other language
+- Select one or more categories (space-separated, e.g. `g w`): `g` grammar · `a` awkward phrasing · `p` punctuation · `w` word choice · `f` flow · `s` spelling · `t` translationese · `o` other language · `u` unclear
 - Rate the severity 1–5
 - Write a short explanation
 
