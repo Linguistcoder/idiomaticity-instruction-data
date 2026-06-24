@@ -36,7 +36,7 @@ When evaluating fluency, pay attention to:
 
 ## Step-by-step process
 
-1. Read the prompt and response without making immediate judgements.
+1. Read the prompt and the start of the response, as shown by the tool, without making immediate judgements.
 2. Identify fluency issues using the criteria above. Ignore content accuracy and relevance.
 3. For each issue: quote the problematic text, select a category, and rate severity on a scale from 1 to 5 (1 = subtle, 5 = very grave). Add a short explanation.
 4. In the final notes field: tag any idiomatic expressions, slang, or cultural references present in the text and state whether each is used correctly. Add any other observations that do not fit the issue categories.
