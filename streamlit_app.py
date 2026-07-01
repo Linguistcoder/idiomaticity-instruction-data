@@ -14,7 +14,6 @@ Data flow:
 """
 
 import json
-import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -120,6 +119,16 @@ def build_queue(items, done_ids):
 # ── UI ───────────────────────────────────────────────────────────────────
 
 st.set_page_config(page_title="Fluency Annotation", layout="centered")
+
+if "authed" not in st.session_state:
+    st.session_state.authed = False
+
+if not st.session_state.authed:
+    pw = st.text_input("Access code", type="password")
+    if pw == st.secrets.get("access_code", ""):
+        st.session_state.authed = True
+        st.rerun()
+    st.stop()
 
 st.title("Fluency Annotation")
 
