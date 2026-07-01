@@ -121,16 +121,6 @@ def build_queue(items, done_ids):
 
 st.set_page_config(page_title="Fluency Annotation", layout="centered")
 
-if "authed" not in st.session_state:
-    st.session_state.authed = False
-
-if not st.session_state.authed:
-    pw = st.text_input("Access code", type="password")
-    if pw == st.secrets.get("access_code", ""):
-        st.session_state.authed = True
-        st.rerun()
-    st.stop()
-
 st.title("Fluency Annotation")
 
 with st.sidebar:
@@ -188,18 +178,20 @@ st.caption(
     f"{item.get('difficulty', '—')} · {pos + 1} of {len(queue)} in your queue"
 )
 
-st.subheader("Instruction")
-st.write(item["instruction"])
+st.subheader(":blue[Instruction]")
+with st.container(border=True):
+    st.write(item["instruction"])
 
-st.subheader("Response")
-response = item["response"]
-if len(response) > RESPONSE_PREVIEW_CHARS and not st.session_state.show_full_response:
-    st.write(response[:RESPONSE_PREVIEW_CHARS] + " …")
-    if st.button("Show full response"):
-        st.session_state.show_full_response = True
-        st.rerun()
-else:
-    st.write(response)
+st.subheader(":blue[Response]")
+with st.container(border=True):
+    response = item["response"]
+    if len(response) > RESPONSE_PREVIEW_CHARS and not st.session_state.show_full_response:
+        st.write(response[:RESPONSE_PREVIEW_CHARS] + " …")
+        if st.button("Show full response"):
+            st.session_state.show_full_response = True
+            st.rerun()
+    else:
+        st.write(response)
 
 st.divider()
 
@@ -211,7 +203,10 @@ with st.form("issue_form", clear_on_submit=True):
     quote = st.text_input("Quote the problematic text")
     cats = st.multiselect("Category (one or more)", list(CATEGORIES.values()))
     severity = st.slider("Severity", 1, 5, 3, help="1 = subtle … 5 = very grave")
-    comment = st.text_area("Explain the issue", height=80)
+    correction = st.text_area("Optional: write the corrected version", height=80,
+                              help="You may rewrite the problematic text to fix the issue."
+                            )
+    comment = st.text_area("Comments", height=60)
     add_issue = st.form_submit_button("Add issue")
 
     if add_issue:
@@ -223,6 +218,7 @@ with st.form("issue_form", clear_on_submit=True):
                 "categories": cats,
                 "severity": severity,
                 "comment": comment,
+                "correction": correction,
             })
 
 if st.session_state.current_issues:
